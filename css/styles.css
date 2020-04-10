@@ -34,3 +34,11 @@
 h2 {
     text-align: center;
 }
+.card {
+    width:100%;
+    height:600px;
+    background-image: url('../images/pieces.jpg');
+    background-size: cover;
+    border: 1px solid black;
+    color:white;
+}
