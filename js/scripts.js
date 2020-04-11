@@ -25,4 +25,12 @@ var smallCrust=new Crust(200);
 var mediumCrust=new Crust(300);
 var largeCrust=new Crust(400);
 
-function Total()
+function Toppings(small,medium,large) {
+    this.smallToppings=smallToppings;
+    this.mediumToppings=mediumToppings;
+    this.largeToppings=largeToppings;
+}
+
+var smallToppings=new Toppings(200);
+var mediumToppings=new Toppings(350);
+var largeToppings=new Toppings(500);
