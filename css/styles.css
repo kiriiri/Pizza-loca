@@ -44,20 +44,7 @@ h2 {
     border: 1px solid black;
     color:white;
 }
-.container {
-    position: absolute;;
-    text-align:center;
-    color:grey;
-    font-size:20px;
-}
-.testbox {
-    background-color:whitesmoke;
-    margin-bottom:8px;
-    outline:none;
-    border:solid 1px rgb(red, green, blue);
-    padding:8px;
-    width:100%;
-}
 p.center {
     text-align: center;
+    color:yellow;
 }
