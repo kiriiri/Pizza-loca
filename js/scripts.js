@@ -8,22 +8,22 @@ var sizes=new Order();
 var crusts=new Order();
 var toppings=new Order();
 
-function Price(small,medium,large) {
-    this.small=small;
-    this.medium=medium;
-    this.large=large;
+function Sizes(size,prices) {
+    this.size=size;
+    this.prices=price;
 }
-var small=new Price(500);
-var medium=new Price(800);
-var large=new Price(1000);
+var small=new Sizes("small",500);
+var medium=new Sizes("medium", 800);
+var large=new Sizes("large", 1000);
 
-function Crust(prices) {
+function Crusts(crust,prices) {
+    this.crust=crust;
     this.prices=price;
 }
 
-var smallCrust=new Crust(200);
-var mediumCrust=new Crust(300);
-var largeCrust=new Crust(400);
+var smallCrust=new Crusts(200);
+var mediumCrust=new Crusts(300);
+var largeCrust=new Crusts(400);
 
 function Toppings(small,medium,large) {
     this.smallToppings=smallToppings;
@@ -33,4 +33,4 @@ function Toppings(small,medium,large) {
 
 var smallToppings=new Toppings(200);
 var mediumToppings=new Toppings(350);
-var largeToppings=new Toppings(500);
+var largeToppings=new Toppings(500);    
