@@ -65,7 +65,7 @@ function increasePrice(price,percentage) {
     return ((percentage/100)*price)
 }
 
-function order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas) {
+function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas) {
     this.selectedSize=selectedSize;
     this.SelectedCrust=selectedCrust;
     this.selectedCrustsPrice=selectedCrustsPrice;
