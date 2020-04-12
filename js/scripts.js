@@ -1,12 +1,20 @@
-function Order(sizes,crusts,toppings) {
+function Pizza(sizes,crusts,toppings) {
     this.sizes=sizes;
     this.crusts=crusts;
     this.toppings=toppings;
 }
 
-var sizes=new Order();
-var crusts=new Order();
-var toppings=new Order();
+var sizes=["small","medium","large"];
+
+var sizes= {
+    small:500,
+    medium:800,
+    large:1000
+};
+
+var crusts=["Stuffed","Cheese","Cauliflower","Gluten-free","Boboli","Neapolitan","Silican","Vegan"];
+
+var toppings=["Pepperonni","Mushroom","Onions","Sausage","Bacon","Pineapple","Black olives","Green pepper"];
 
 function Sizes(size,prices) {
     this.size=size;
