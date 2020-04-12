@@ -16,29 +16,30 @@ var crusts=["Stuffed","Cheese","Cauliflower","Gluten-free","Boboli","Neapolitan"
 
 var toppings=["Pepperonni","Mushroom","Onions","Sausage","Bacon","Pineapple","Black olives","Green pepper"];
 
-function Sizes(size,prices) {
-    this.size=size;
-    this.prices=price;
-}
-var small=new Sizes("small",500);
-var medium=new Sizes("medium", 800);
-var large=new Sizes("large", 1000);
-
-function Crusts(crust,prices) {
+function Crusts(crust,size,prices) {
     this.crust=crust;
     this.prices=price;
 }
 
-var smallCrust=new Crusts(200);
-var mediumCrust=new Crusts(300);
-var largeCrust=new Crusts(400);
+var crusts={
+    small:200,
+    medium:300,
+    large:400
+};
 
-function Toppings(small,medium,large) {
-    this.smallToppings=smallToppings;
-    this.mediumToppings=mediumToppings;
-    this.largeToppings=largeToppings;
+function Toppings(topping,sizes,prices) {
+    this.topping=topping;
+    this.sizes=size;
+    this.price=price;
 }
 
-var smallToppings=new Toppings(200);
-var mediumToppings=new Toppings(350);
-var largeToppings=new Toppings(500);    
+var toppings={
+    small:200,
+    medium:250,
+    large:300
+};
+
+function Order(numberOfPizza,totalPrice) {
+    this.numberOfPizza=numberOfPizza;
+    this.totalPrice=totalPrice;
+}
