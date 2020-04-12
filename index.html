@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <div class="form">
+                        <div class="form" id="sizes">
                             <h4><b>Sizes</b></h4>
                             <select id="sizes" required>
                                 <option>----</option>
@@ -28,7 +28,7 @@
                                 <option value="3">Large</option>
                             </select>
                         </div>
-                    <div class="form">
+                    <div class="form" id="crusts">
                         <h4><b>Crusts</b></h4>
                         <select id="crusts" required>
                             <option>-----</option>
@@ -42,7 +42,7 @@
                             <option value="8">Vegan</option>
                         </select>
                     </div>
-                    <div class="form">
+                    <div class="form" id="toppings">
                         <h4><b>Toppings</b></h4>
                         <select id="toppings" required>
                             <option>-----</option>
@@ -56,17 +56,18 @@
                             <option value="8">Green pepper</option>
                         </select>
                     </div>
-                    <div class="form">
+                    <div class="form" id="number-of-pizzas">
                         <label for="number-of-pizzas"><b>Number of Pizzas</b></label>
                         <input type="number" id="number-of-pizzas" value="number-of-pizzas" min="1" required>
                     </div>
-                    <span class="btn btn-primary"  onclick = "submitData(); return false;" id="submit">GET</span>
+                    <div class="button">
+                        <button type="submit" onclick = "submitData(); return false;" id="submit">GET</button>
+                    </div>
                     <span class="btn btn-primary" id="btn-primary">TAKE-OUT</span>
                     <div class="col-md-4"></div>
                 </div>
             </div>
         </div>
             <p class="center">CONNECT WITH PIZZA LOCA BY DIALLING: 305-678-908</p>
-        </div>
     </body>
 </html>
