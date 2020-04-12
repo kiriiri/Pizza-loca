@@ -29,6 +29,7 @@
     height:600px;
     background-image:url('../images/PizzaPic.jpg');
     background-size:cover;
+    background-repeat: no-repeat;
     border:1px solid black;
 }
 h2 {
@@ -39,6 +40,24 @@ h2 {
     height:600px;
     background-image: url('../images/pieces.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     border: 1px solid black;
     color:white;
+}
+.container {
+    position: absolute;;
+    text-align:center;
+    color:grey;
+    font-size:20px;
+}
+.testbox {
+    background-color:whitesmoke;
+    margin-bottom:8px;
+    outline:none;
+    border:solid 1px rgb(red, green, blue);
+    padding:8px;
+    width:100%;
+}
+p.center {
+    text-align: center;
 }
