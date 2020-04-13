@@ -32,11 +32,11 @@
                         <h4><b>Crusts</b></h4>
                         <select id="crusts" required>
                             <option>-----</option>
-                            <option vlaue="1">Stuffed</option>
+                            <option value="1">Stuffed</option>
                             <option value="2">Cheese</option>
                             <option value="3">Cauliflower</option>
                             <option value="4">Gluten-free</option>
-                            <option vlaue="5">Boboli</option>
+                            <option value="5">Boboli</option>
                             <option value="6">Neapolitan</option>
                             <option value="7">Silican</option>
                             <option value="8">Vegan</option>
@@ -49,7 +49,7 @@
                             <option value="1">Pepperonni</option>
                             <option value="2">Mushroom</option>
                             <option value="3">Onions</option>
-                            <option value="4">Sausage</option>
+                            <option value="4">Sausages</option>
                             <option value="5">Bacon</option>
                             <option value="6">Pineapple</option>
                             <option value="7">Black olives</option>
@@ -60,10 +60,13 @@
                         <label for="number-of-pizzas"><b>Number of Pizzas</b></label>
                         <input type="number" id="number-of-pizzas" value="number-of-pizzas" min="1" required>
                     </div>
+                    <div class="form">
+                        <label for="totalPrice"><b>Total price</b></label>
+                        <input type="number" id="order">
+                    </div>
                     <div class="button">
                         <button type="submit" onclick = "submitData(); return false;" id="submit">GET</button>
                     </div>
-                    <span class="btn btn-primary" id="btn-primary">TAKE-OUT</span>
                     <div class="col-md-4"></div>
                 </div>
             </div>

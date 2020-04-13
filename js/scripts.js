@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function () {
 
 var pizzaBasePrice=500;
 
-function SubmitData () {
+function submitData () {
     var selectedPizzaSize=parseInt(document.getElementById("sizes").value);
     var selectedSize=$("#sizes option:selected").text();
     var selectedCrustsPrice=parseInt(document.getElementById("crusts").value);
