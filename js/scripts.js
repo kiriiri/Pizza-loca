@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded',function () {
     document.getElementById("submit").addEventListener("click", function(event) {
         event.preventDefault()
     })
-});
+
 
     var pizzaSizes=document.getElementById("sizes");
     var pizzaCrusts=document.getElementById("crusts");
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded',function () {
         el.textContent=topping;
         el.value=toppingsBasePrice;
         pizzaToppings.appendChild(el);
-    }  
+    } 
+});
 
 var pizzaBasePrice=500;
 
