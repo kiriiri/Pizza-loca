@@ -1,62 +1,70 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pizza-loca</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-    </head>
-    <body>
-        <div id="nav-bar">
-            <span class="nav-bar-title">PIZZA LOCA</span>
-        </div>
-        <div id="pizza-pic"></div>
-        <div class="card">
-            <div class="card-body">
-                <h2><b><u>Please fill your order below</u></b></h2>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <div class="form" id="sizes">
-                            <h4><b>Sizes</b></h4>
-                            <select id="size" required>
-                                <option>----</option>
-                            </select>
-                        </div>
-                    <div class="form" id="crusts">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza-loca</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div id="nav-bar">
+        <span class="nav-bar-title">PIZZA LOCA</span>
+    </div>
+    <div id="pizza-pic"></div>
+    <div class="card">
+        <div class="card-body">
+            <h2><b><u>Please fill your order below</u></b></h2>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="form" id="size">
+                        <h4><b>Sizes</b></h4>
+                        <select id="sizes" required>
+                            <option>----</option>
+                        </select>
+                    </div>
+                    <div class="form" id="crust">
                         <h4><b>Crusts</b></h4>
-                        <select id="crust" required>
+                        <select id="crusts" required>
                             <option>-----</option>
                         </select>
                     </div>
-                    <div class="form" id="toppings">
+                    <div class="form" id="topping">
                         <h4><b>Toppings</b></h4>
-                        <select id="topping" required>
+                        <select id="toppings" required>
                             <option>-----</option>
                         </select>
                     </div>
                     <div class="form" id="number-of-pizzas">
-                        <label for="number-of-pizzas"><b>Number of Pizzas</b></label>
-                        <input type="number" id="number-of-pizza" value="number-of-pizza" min="1" required>
+                        <label for="numberOfPizzas"><b>Number of Pizzas</b></label>
+                        <input type="number" id="numberOfPizzas" value=0 min="1" required>
                     </div>
+
                     <div class="form">
-                        <label for="order"><b>Total price</b></label>
-                        <input type="number" id="order">
+                        <label>Delivery</label>
+                        <input type="radio" name="selectDelivery" id="deliverySelected" value="yes" />
+                        <label for="sizeSmall">Yes</label>
+                        <input type="radio" name="selectDelivery" id="deliveryNotSelected" value="no" />
+                        <label for="sizeMed">No</label>
                     </div>
+
+                    <div class="form" id="deliveryAddressHolder">
+                        <label for="w3mission">Enter delivery address:</label>
+                        <input type="text" id="deliveryAddress" >
+                    </div>
+
                     <div class="button">
-                        <button type="submit" onclick = "submitData(); return false;" id="submit">GET</button>
-                        <p>DELIVERY<span class="btn btn-primary" id="yes">YES</span><span class="btn btn-success" id="no">NO</span></p>
-                        <div class="form" id="address">
-                            <label for="address"><b>DELIVERY ADDRESS</b></label>
-                            <input type="text" id="delivery-address">
-                        </div>
+                        <button type="submit" onclick="submitData(); return false;" id="submit">GET</button>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
             </div>
         </div>
-            <p class="center">CONNECT WITH PIZZA LOCA BY DIALLING: 305-678-908</p>
-    </body>
+        <p class="center">CONNECT WITH PIZZA LOCA BY DIALLING: 305-678-908</p>
+</body>
+
 </html>

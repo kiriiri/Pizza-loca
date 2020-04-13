@@ -1,0 +1,108 @@
+
+<!-- saved from url=(0032)http://127.0.0.1:5501/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza-loca</title>
+    <link href="./PizzaLoca_files/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./PizzaLoca_files/styles.css" rel="stylesheet" type="text/css">
+    <script src="./PizzaLoca_files/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./PizzaLoca_files/scripts.js"></script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <div id="nav-bar">
+        <span class="nav-bar-title">PIZZA LOCA</span>
+    </div>
+    <div id="pizza-pic"></div>
+    <div class="card">
+        <div class="card-body">
+            <h2><b><u>Please fill your order below</u></b></h2>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="form" id="size">
+                        <h4><b>Sizes</b></h4>
+                        <select id="sizes" required="">
+                            <option>----</option>
+                        <option value="0">small</option><option value="1">medium</option><option value="2">large</option></select>
+                    </div>
+                    <div class="form" id="crust">
+                        <h4><b>Crusts</b></h4>
+                        <select id="crusts" required="">
+                            <option>-----</option>
+                        <option value="100">Stuffed</option><option value="100">Cheese</option><option value="100">Cauliflower</option><option value="100">Gluten-free</option><option value="100">Boboli</option><option value="100">Neapolitan</option><option value="100">Silican</option><option value="100">Vegan</option></select>
+                    </div>
+                    <div class="form" id="topping">
+                        <h4><b>Toppings</b></h4>
+                        <select id="toppings" required="">
+                            <option>-----</option>
+                        <option value="200">Pepperonni</option><option value="200">Mushroom</option><option value="200">Onions</option><option value="200">Sausages</option><option value="200">Bacon</option><option value="200">Pineapple</option><option value="200">Black olives</option><option value="200">Green pepper</option></select>
+                    </div>
+                    <div class="form" id="number-of-pizzas">
+                        <label for="numberOfPizzas"><b>Number of Pizzas</b></label>
+                        <input type="number" id="numberOfPizzas" value="0" min="1" required="">
+                    </div>
+
+                    <div class="form">
+                        <label>Delivery</label>
+                        <input type="radio" name="selectDelivery" id="deliverySelected" value="yes">
+                        <label for="sizeSmall">Yes</label>
+                        <input type="radio" name="selectDelivery" id="deliveryNotSelected" value="no">
+                        <label for="sizeMed">No</label>
+                    </div>
+
+                    <div class="form" id="deliveryAddressHolder">
+                        <label for="w3mission">Enter delivery address:</label>
+                        <input type="text" id="deliveryAddress">
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" onclick="submitData(); return false;" id="submit">GET</button>
+                    </div>
+                    <span class="btn btn-primary" id="btn-primary">TAKE-OUT</span>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+        <p class="center">CONNECT WITH PIZZA LOCA BY DIALLING: 305-678-908</p>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</div></body></html>
