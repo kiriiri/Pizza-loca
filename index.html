@@ -21,19 +21,19 @@
                     <div class="col-md-4">
                         <div class="form" id="sizes">
                             <h4><b>Sizes</b></h4>
-                            <select id="sizes" required>
+                            <select id="size" required>
                                 <option>----</option>
                             </select>
                         </div>
                     <div class="form" id="crusts">
                         <h4><b>Crusts</b></h4>
-                        <select id="crusts" required>
+                        <select id="crust" required>
                             <option>-----</option>
                         </select>
                     </div>
                     <div class="form" id="toppings">
                         <h4><b>Toppings</b></h4>
-                        <select id="toppings" required>
+                        <select id="topping" required>
                             <option>-----</option>
                         </select>
                     </div>
@@ -47,6 +47,11 @@
                     </div>
                     <div class="button">
                         <button type="submit" onclick = "submitData(); return false;" id="submit">GET</button>
+                        <p>DELIVERY<span class="btn btn-primary" id="yes">YES</span><span class="btn btn-success" id="no">NO</span></p>
+                        <div class="form" id="address">
+                            <label for="address"><b>DELIVERY ADDRESS</b></label>
+                            <input type="text" id="delivery-address">
+                        </div>
                     </div>
                     <div class="col-md-4"></div>
                 </div>

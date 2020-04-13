@@ -48,3 +48,9 @@ p.center {
     text-align: center;
     color:yellow;
 }
+p {
+    color: black;
+}
+#address {
+    color:black;
+}
