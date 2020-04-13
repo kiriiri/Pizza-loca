@@ -48,10 +48,10 @@ function submitData () {
     var selectedTopping=$("#toppings option:selected").text();
     var numberOfPizzas=parseInt(document.getElementById("number-of-pizzas").value);
 
-    if(selectedPizzaSize==0) {
+    if(selectedPizzaSize===0) {
         selectedCrustsPrice=selectedCrustsPrice + increasePrice(selectedCrustsPrice, 10)
         selectedToppingPrice=selectedToppingPrice + increasePrice(selectedToppingPrice, 10)
-    }else if(selectedPizzaSize==1) {
+    }else if(selectedPizzaSize===1) {
         selectedCrustsPrice=selectedCrustsPrice +increasePrice(selectedCrustsPrice,15)
         selectedToppingPrice=selectedToppingPrice + increasePrice(selectedToppingPrice,15)
     }else {
