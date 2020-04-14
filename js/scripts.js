@@ -50,7 +50,7 @@ function submitData () {
     var selectedTopping=$("#toppings option:selected").text();
     var numberOfPizzas=parseInt(document.getElementById("numberOfPizzas").value);
     var deliveryPrice=parseInt(document.getElementById("deliverySelected").checked);
-    var deliverySelected=$("#deliverySelected").number();
+    var deliverySelected=$("#deliverySelected").text();
     var pizzaPrice = 0;
 
     if(selectedPizzaSize===0) {
