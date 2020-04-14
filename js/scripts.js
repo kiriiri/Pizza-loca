@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded',function () {
 });
 var pizzaBasePrice=500;
 
+var deliveryPrice=150;
+
 function submitData () {
     var selectedPizzaSize=parseInt(document.getElementById("sizes").value);
     var selectedSize=$("#sizes option:selected").text();
@@ -47,23 +49,28 @@ function submitData () {
     var selectedToppingPrice=parseInt(document.getElementById("toppings").value);
     var selectedTopping=$("#toppings option:selected").text();
     var numberOfPizzas=parseInt(document.getElementById("numberOfPizzas").value);
+    var deliveryPrice=parseInt(document.getElementById("deliverySelected").checked);
+    var deliverySelected=$("#deliverySelected").number();
     var pizzaPrice = 0;
 
-    if(selectedPizzaSize==0) {
+    if(selectedPizzaSize===0) {
         selectedCrustsPrice=selectedCrustsPrice + increasePrice(selectedCrustsPrice, 10)
         selectedToppingPrice=selectedToppingPrice + increasePrice(selectedToppingPrice, 10)
         pizzaPrice = pizzaBasePrice + increasePrice(pizzaBasePrice, 10) + selectedCrustsPrice + selectedToppingPrice
-    }else if(selectedPizzaSize==1) {
+    }else if(selectedPizzaSize===1) {
         selectedCrustsPrice=selectedCrustsPrice +increasePrice(selectedCrustsPrice,15)
         selectedToppingPrice=selectedToppingPrice + increasePrice(selectedToppingPrice,15)
-        pizzaPrice = pizzaBasePrice + increasePrice(pizzaBasePrice, 10) + selectedCrustsPrice + selectedToppingPrice
-    }else {
+        pizzaPrice = pizzaBasePrice + increasePrice(pizzaBasePrice, 15) + selectedCrustsPrice + selectedToppingPrice
+    }else if(selectedPizzaSize===2) {
         selectedCrustsPrice=selectedCrustsPrice + increasePrice(selectedCrustsPrice,20)
         selectedToppingPrice=selectedToppingPrice + increasePrice(selectedToppingPrice,20)
-        pizzaPrice = pizzaBasePrice + increasePrice(pizzaBasePrice, 10) + selectedCrustsPrice + selectedToppingPrice
+        pizzaPrice = pizzaBasePrice + increasePrice(pizzaBasePrice, 20) + selectedCrustsPrice + selectedToppingPrice
+    }else if(deliverySelected===true) {
+        pizzaPrice + deliveryPrice
     }
 
-    var order=new Order(selectedSize, selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas,pizzaPrice);    
+
+    var order=new Order(selectedSize, selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas,pizzaPrice,deliveryPrice);    
 
     displayOrder(order)
 }
@@ -74,13 +81,15 @@ function increasePrice(price,percentage) {
     return ((percentage/100)*price)
 }
 
-function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas, pizzaPrice) {
+function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas, pizzaPrice,deliveryPrice,deliverySelected) {
     this.selectedSize=selectedSize;
     this.SelectedCrust=selectedCrust;
     this.selectedCrustsPrice=selectedCrustsPrice;
     this.selectedToppingPrice=selectedToppingPrice;
     this.selectedTopping=selectedTopping;
     this.numberOfPizzas=numberOfPizzas;
+    this.deliveryPrice=deliveryPrice;
+    this.deliverySelected=deliverySelected;
     this.totalPrice = pizzaPrice
 }
 
