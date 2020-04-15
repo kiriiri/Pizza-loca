@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded',function () {
 
     $('input[type=radio]').click(function(){
         var deliveryAddressHolder = document.getElementById("deliveryAddressHolder")
-        if (this.id == "deliveryselect")
-            if(this.value == "yes"){
+        if (this.id ="deliveryselected")
+            if(this.value = "yes"){
                 deliveryPrice = 150
                 deliveryAddressHolder.style.visibility = 'visible'
                 deliverySelected = true;
@@ -69,7 +69,7 @@ function submitData () {
     var selectedToppingPrice=parseInt(document.getElementById("toppings").value);
     var selectedTopping=$("#toppings option:selected").text();
     var numberOfPizzas=parseInt(document.getElementById("numberOfPizzas").value);
-    var deliveryAddress=document.getElementById("deliveryAddress").value
+    var deliveryAddress=document.getElementById("deliveryAddress").value;
     var pizzaPrice = 0;
 
     if(selectedPizzaSize===0) {
@@ -112,7 +112,7 @@ function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPri
     this.numberOfPizzas=numberOfPizzas;
     this.deliveryPrice=deliveryPrice;
     this.deliveryAddress=deliveryAddress;
-    this.totalPrice = pizzaPrice
+    this.totalPrice = pizzaPrice;
 }
 
 function displayOrder(order){
@@ -120,7 +120,8 @@ function displayOrder(order){
     var totalPriceHolder = document.getElementById("pizzaPrice")
     totalPriceHolder.style.visibility = 'visible'
     totalPrice.value = order.totalPrice
-    if(deliverySelected){
-        alert("Your order will be deliverd to your location");
+    deliveryAddressHolder.style.visibility= 'visible'
+    if(deliverySelected===true) {
+        alert("Your order will be delivered to your location");
     }
 }
