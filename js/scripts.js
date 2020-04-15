@@ -1,3 +1,8 @@
+var pizzaBasePrice=500;
+var deliveryPrice=0;
+var deliverySelected = false;
+
+
 document.addEventListener('DOMContentLoaded',function () {
     document.getElementById("submit").addEventListener("click", function(event) {
         event.preventDefault()
@@ -36,10 +41,25 @@ document.addEventListener('DOMContentLoaded',function () {
         pizzaToppings.appendChild(el);
     }   
 
-});
-var pizzaBasePrice=500;
 
-var deliveryPrice=150;
+    $('input[type=radio]').click(function(){
+        var deliveryAddressHolder = document.getElementById("deliveryAddressHolder")
+        if (this.id == "deliveryselect")
+            if(this.value == "yes"){
+                deliveryPrice = 150
+                deliveryAddressHolder.style.visibility = 'visible'
+                deliverySelected = true;
+                alert("Delivery charge " + deliveryPrice);
+
+            }else{
+                deliveryPrice = 0
+                deliveryAddressHolder.style.visibility = 'hidden'
+                deliverySelected = false;
+            }
+    });
+
+});
+
 
 function submitData () {
     var selectedPizzaSize=parseInt(document.getElementById("sizes").value);
@@ -49,8 +69,7 @@ function submitData () {
     var selectedToppingPrice=parseInt(document.getElementById("toppings").value);
     var selectedTopping=$("#toppings option:selected").text();
     var numberOfPizzas=parseInt(document.getElementById("numberOfPizzas").value);
-    var deliveryPrice=parseInt(document.getElementById("deliverySelected").checked);
-    var deliverySelected=$("#deliverySelected").text();
+    var deliveryAddress=document.getElementById("deliveryAddress").value
     var pizzaPrice = 0;
 
     if(selectedPizzaSize===0) {
@@ -65,12 +84,15 @@ function submitData () {
         selectedCrustsPrice=selectedCrustsPrice + increasePrice(selectedCrustsPrice,20)
         selectedToppingPrice=selectedToppingPrice + increasePrice(selectedToppingPrice,20)
         pizzaPrice = pizzaBasePrice + increasePrice(pizzaBasePrice, 20) + selectedCrustsPrice + selectedToppingPrice
-    }else if(deliverySelected===true) {
-        pizzaPrice + deliveryPrice
+    }
+    
+     if(deliverySelected && numberOfPizzas > 0) {
+       pizzaPrice = (pizzaPrice*numberOfPizzas) + deliveryPrice
+    }else{
+        pizzaPrice = pizzaPrice * numberOfPizzas
     }
 
-
-    var order=new Order(selectedSize, selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas,pizzaPrice,deliveryPrice);    
+    var order=new Order(selectedSize, selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas,pizzaPrice,deliveryPrice,deliveryAddress);    
 
     displayOrder(order)
 }
@@ -81,7 +103,7 @@ function increasePrice(price,percentage) {
     return ((percentage/100)*price)
 }
 
-function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas, pizzaPrice,deliveryPrice,deliverySelected) {
+function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPrice,selectedTopping,numberOfPizzas, pizzaPrice,deliveryPrice,deliveryAddress) {
     this.selectedSize=selectedSize;
     this.SelectedCrust=selectedCrust;
     this.selectedCrustsPrice=selectedCrustsPrice;
@@ -89,11 +111,16 @@ function Order(selectedSize,selectedCrust,selectedCrustsPrice,selectedToppingPri
     this.selectedTopping=selectedTopping;
     this.numberOfPizzas=numberOfPizzas;
     this.deliveryPrice=deliveryPrice;
-    this.deliverySelected=deliverySelected;
+    this.deliveryAddress=deliveryAddress;
     this.totalPrice = pizzaPrice
 }
 
 function displayOrder(order){
-    console.log(order)
-
+    var totalPrice = document.getElementById("totalPrice")
+    var totalPriceHolder = document.getElementById("pizzaPrice")
+    totalPriceHolder.style.visibility = 'visible'
+    totalPrice.value = order.totalPrice
+    if(deliverySelected){
+        alert("Your order will be deliverd to your location");
+    }
 }
