@@ -61,3 +61,9 @@ p {
 #pizzaPrice{
     visibility: hidden;
 }
+#checkout {
+    visibility:hidden;
+}
+td, th {
+    color:white;
+}
