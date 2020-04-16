@@ -126,3 +126,12 @@ function displayOrder(order){
         alert("Your order will be delivered to your location once you checkout.");
     }
 }
+$("#checkout").click(function(event) {
+    $("#fullOrder").show();
+    $("#sizes").append(selectedSize);
+    $("#crusts").append(selectedCrust);
+    $("#toppings").append(selectedTopping);
+    $("#number").append(numberOfPizzas);
+    $("#total").append(pizzaPrice);
+    event.preventDefault();
+});

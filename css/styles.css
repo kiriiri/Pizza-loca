@@ -67,3 +67,6 @@ p {
 td, th {
     color:white;
 }
+#fullOrder {
+    display:none;
+}
