@@ -68,7 +68,7 @@ td, th {
     color:white;
 }
 #fullOrder {
-    visibility:hidden;
+    display: none;
 }
 #tasty {
     width:100%;

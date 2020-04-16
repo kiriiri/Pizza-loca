@@ -127,6 +127,7 @@ function displayOrder(order){
     }
 }
 $("#checkout").click(function(event) {event.preventDefault();
+    $("#fullOrder").show();
     $("#sizes").append(selectedSize);
     $("#crusts").append(selectedCrust);
     $("#toppings").append(selectedTopping);
