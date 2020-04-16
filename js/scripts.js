@@ -126,8 +126,7 @@ function displayOrder(order){
         alert("Your order will be delivered to your location once you checkout.");
     }
 }
-$("#checkout").click(function(event) {    event.preventDefault();
-
+$("#checkout").click(function(event) {event.preventDefault();
     $("#sizes").append(selectedSize);
     $("#crusts").append(selectedCrust);
     $("#toppings").append(selectedTopping);
