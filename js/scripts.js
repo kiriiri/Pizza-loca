@@ -121,7 +121,7 @@ function displayOrder(order){
     totalPriceHolder.style.visibility = 'visible'
     totalPrice.value = order.totalPrice
     deliveryAddressHolder.style.visibility= 'visible'
-    if(deliverySelected===true) {
-        alert("Your order will be delivered to your location");
+    if(deliverySelected) {
+        alert("Your order will be delivered to your location once you checkout.");
     }
 }
