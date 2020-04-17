@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded',function () {
         $('#selectedSizeTd').html($("#sizes option:selected").text());
         $("#selectedCrusts").html($("#crusts option:selected").text());
         $("#selectedToppings").html($("#toppings option:selected").text());
-        $("#number").html(numberOfPizzas);
-        $("#total").html(totalPrice);
+        $("#number").html($("#numberOfPizzas").val());
+        $("#total").html($("#totalPrice").val());
     });
 
 });
