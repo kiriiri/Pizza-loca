@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded',function () {
                 deliverySelected = true;
                 alert("Delivery charge " + deliveryPrice);
 
-            }else{
+            }else {
                 deliveryPrice = 0
                 deliveryAddressHolder.style.visibility = 'hidden'
                 deliverySelected = false;
