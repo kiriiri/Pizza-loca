@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded',function () {
     $('input[type=radio]').click(function(){
         var deliveryAddressHolder = document.getElementById("deliveryAddressHolder")
         if (this.id ="deliveryselected")
-            if(this.value = "yes"){
+            if(this.value === "yes"){
                 deliveryPrice = 150
                 deliveryAddressHolder.style.visibility = 'visible'
                 deliverySelected = true;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded',function () {
     $("#checkout").click(function (event) {
         event.preventDefault();
         $("#checkout").hide();
-        $("#fullOrder").fadeIn()
+        $("#fullOrder").fadeIn();
         $('#selectedSizeTd').html($("#sizes option:selected").text());
         $("#selectedCrusts").html($("#crusts option:selected").text());
         $("#selectedToppings").html($("#toppings option:selected").text());
