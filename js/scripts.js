@@ -1,7 +1,6 @@
 var pizzaBasePrice=500;
 var deliveryPrice=0;
 var deliverySelected = false;
-var order
 
 
 document.addEventListener('DOMContentLoaded',function () {
@@ -61,12 +60,13 @@ document.addEventListener('DOMContentLoaded',function () {
 
     $("#checkout").click(function (event) {
         event.preventDefault();
-        $("#fullOrder").show()
-        $('#selectedSizeTd').html(order.selectedSize);
-        $("#selectedCrusts").html(order.SelectedCrust);
-        $("#selectedToppings").html(order.selectedTopping);
-        $("#number").html(order.numberOfPizzas);
-        $("#total").html(order.totalPrice);
+        $("#checkout").hide();
+        $("#fullOrder").fadeIn()
+        $('#selectedSizeTd').html($("#sizes option:selected").text());
+        $("#selectedCrusts").html($("#crusts option:selected").text());
+        $("#selectedToppings").html($("#toppings option:selected").text());
+        $("#number").html(numberOfPizzas);
+        $("#total").html(totalPrice);
     });
 
 });
